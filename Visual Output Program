@@ -31,14 +31,17 @@ def keyPressed():
     global colour
     if key == "g":
         colour = (100, 255, 175)
+        background(100)
         fill(colour[0], colour[1], colour[2])
         square(x, y)
     elif key == "b":
         colour = (100, 187, 255)
+        background(100)
         fill(colour[0], colour[1], colour[2])
         square(x, y)
     elif key == "y":
         colour = (255, 247, 100)
+        background(100)
         fill(colour[0], colour[1], colour[2])
         square(x, y)
     else:
