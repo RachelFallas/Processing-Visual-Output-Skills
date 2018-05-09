@@ -1,0 +1,32 @@
+#Rachel Fallas, Leshae Bell
+#Overview of Processing Visual Output Skills
+
+def setup():
+    size(400, 400)
+    background(200)
+    noStroke()
+    fill(255)
+    rect(180, 180, 40, 40)
+    
+colour = (255)
+
+def square(x, y):
+    rect(x-20, y-20, 40, 40)
+    
+def mouseClicked():
+    background(200)
+    fill(colour)
+    square(mouseX, mouseY)
+    
+def keyPressed():
+    global colour
+    if key == "g":
+        colour = (100, 255, 175)
+    elif key == "b":
+        colour = (100, 187, 255)
+    elif key == "y":
+        colour = (255, 247, 100)
+        
+    
+def draw():
+    return
