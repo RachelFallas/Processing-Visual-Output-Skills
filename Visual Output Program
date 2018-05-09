@@ -9,29 +9,36 @@ def setup():
     rect(180, 180, 40, 40)
     
 colour = (255, 255, 255)
+x = 0
+y = 0
 
 def square(x, y):
     rect(x-20, y-20, 40, 40)
     
 def mouseClicked():
+    global x
+    global y
     background(200)
     fill(colour[0], colour[1], colour[2])
+    x = mouseX
+    y = mouseY
     square(mouseX, mouseY)
+    
     
 def keyPressed():
     global colour
     if key == "g":
         colour = (100, 255, 175)
         fill(colour[0], colour[1], colour[2])
-        square(mouseX, mouseY)
+        square(x, y)
     elif key == "b":
         colour = (100, 187, 255)
         fill(colour[0], colour[1], colour[2])
-        square(mouseX, mouseY)
+        square(x, y)
     elif key == "y":
         colour = (255, 247, 100)
         fill(colour[0], colour[1], colour[2])
-        square(mouseX, mouseY)
+        square(x, y)
         
     
 def draw():
