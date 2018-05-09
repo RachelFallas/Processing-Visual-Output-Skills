@@ -7,6 +7,8 @@ def setup():
     noStroke()
     fill(255)
     rect(180, 180, 40, 40)
+    text("The square will appear where the mouse is clicked; To change the colour", 5, 20)
+    text("of the square, press B for blue, G for green or Y for yellow.", 45, 35)
     
 colour = (255, 255, 255)
 x = 0
