@@ -41,6 +41,15 @@ def keyPressed():
         colour = (255, 247, 100)
         fill(colour[0], colour[1], colour[2])
         square(x, y)
+    else:
+        if x != 0 and y != 0:
+            fill(255)
+            text("Press B for blue, G for green or Y for yellow", 80, 20)
+        else:
+            fill(100)
+            rect(0, 0, 400, 50)
+            fill(255)
+            text("Press B for blue, G for green or Y for yellow", 80, 20)
         
     
 def draw():
