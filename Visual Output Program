@@ -3,7 +3,7 @@
 
 def setup():
     size(400, 400)
-    background(200)
+    background(100)
     noStroke()
     fill(255)
     rect(180, 180, 40, 40)
@@ -18,7 +18,7 @@ def square(x, y):
 def mouseClicked():
     global x
     global y
-    background(200)
+    background(100)
     fill(colour[0], colour[1], colour[2])
     x = mouseX
     y = mouseY
