@@ -2,32 +2,32 @@
 #Overview of Processing Visual Output Skills
 
 def setup():
-    '''will make the square and teh background'''
+    '''Will make the initial square, background and beginning instructions'''
     size(400, 400)
     background(200)
     noStroke()
     fill(255)
     rect(180, 180, 40, 40)
 
-#the colour for the square when the code first starts up
+#The colour for the square when the code first starts up
 colour = (255, 255, 255)
 
 def square(x, y):
-    '''is the square'''
-    #is the square whereb
+    '''Draws the square so that only two arguments are needed, and the arguments
+    are the coordinates of the centre of the square'''
     rect(x-20, y-20, 40, 40)
     
 def mouseClicked():
-    '''if the mouse is clicked then it will rest the background and move the
+    '''If the mouse is clicked then it will reset the background and move the
     square to where the mouse is'''
     background(200)
     fill(colour[0], colour[1], colour[2])
     square(mouseX, mouseY)
     
 def keyPressed():
-    '''will determen what key is pressed and whether it will change the colour of the
-    square. If the usre does not push the right key then it will display a text that 
-    tells the user what key they can press'''
+    '''Will determine what key is pressed and whether it will change the colour of the
+    square. If the user does not push the right key then it will display text that 
+    tells the user what keys they can press'''
     global colour
     if key == "g":
         colour = (100, 255, 175)
