@@ -20,8 +20,8 @@ def setup():
 #The colour for the square when the code first starts up:     
 colour = (255, 255, 255)
 #Stores mouseX and mouseY values:
-x = 0
-y = 0
+x = 200
+y = 200
  
 def square(x, y):
     '''Draws the square so that only two arguments are needed, and the arguments
@@ -85,7 +85,7 @@ def keyPressed():
         square(x, y)
     #if the user pushes any other key it will send a message to them of what key they can push
     else:
-        if x != 0 and y != 0:
+        if x != 200 and y != 200:
             #so that the text is white
             fill(255)
             #tells tehuser what the y can do
