@@ -1,48 +1,70 @@
-#Rachel Fallas, Leshae Bell
-#Overview of Processing Visual Output Skills
-
-def setup():
-    '''Will make the initial square, background and beginning instructions'''
-    size(400, 400)
-    background(200)
-    noStroke()
-    fill(255)
-    rect(180, 180, 40, 40)
-
-#The colour for the square when the code first starts up
-colour = (255, 255, 255)
-
-def square(x, y):
-    '''Draws the square so that only two arguments are needed, and the arguments
+ #Rachel Fallas, Leshae Bell
+ #Overview of Processing Visual Output Skills
+ 
+ def setup():
+     '''Will make the initial square, background and beginning instructions'''
+     size(400, 400)
+     background(100)
+     noStroke()
+     fill(255)
+     rect(180, 180, 40, 40)
+     text("The square will appear where the mouse is clicked; To change the colour", 5, 20)
+     text("of the square, press B for blue, G for green or Y for yellow.", 45, 35)
+     
+ #The colour for the square when the code first starts up:     
+ colour = (255, 255, 255)
+ #Stores mouseX and mouseY values:
+ x = 0
+ y = 0
+ 
+ def square(x, y):
+     '''Draws the square so that only two arguments are needed, and the arguments
     are the coordinates of the centre of the square'''
     rect(x-20, y-20, 40, 40)
-    
-def mouseClicked():
-    '''If the mouse is clicked then it will reset the background and move the
-    square to where the mouse is'''
-    background(200)
-    fill(colour[0], colour[1], colour[2])
-    square(mouseX, mouseY)
-    
-def keyPressed():
-    '''Will determine what key is pressed and whether it will change the colour of the
-    square. If the user does not push the right key then it will display text that 
-    tells the user what keys they can press'''
-    global colour
-    if key == "g":
-        colour = (100, 255, 175)
-        fill(colour[0], colour[1], colour[2])
-        square(mouseX, mouseY)
-    elif key == "b":
-        colour = (100, 187, 255)
-        fill(colour[0], colour[1], colour[2])
-        square(mouseX, mouseY)
-    elif key == "y":
-        colour = (255, 247, 100)
-        fill(colour[0], colour[1], colour[2])
-        square(mouseX, mouseY)
-        
-    
-def draw():
-    '''This function is needed but does nothing'''
-    return
+     
+ def mouseClicked():
+     '''If the mouse is clicked then it will reset the background and move the
+     square to where the mouse is'''
+     global x
+     global y
+     background(100)
+     fill(colour[0], colour[1], colour[2])
+     x = mouseX
+     y = mouseY
+     square(mouseX, mouseY)
+     
+     
+ def keyPressed():
+     '''Will determine what key is pressed and whether it will change the colour of the
+     square. If the user does not push the right key then it will display text that 
+     tells the user what keys they can press'''
+     global colour
+     if key == "g":
+         colour = (100, 255, 175)
++        background(100)
+         fill(colour[0], colour[1], colour[2])
+         square(x, y)
+     elif key == "b":
+         colour = (100, 187, 255)
++        background(100)
+         fill(colour[0], colour[1], colour[2])
+         square(x, y)
+     elif key == "y":
+         colour = (255, 247, 100)
++        background(100)
+         fill(colour[0], colour[1], colour[2])
+         square(x, y)
+     else:
+         if x != 0 and y != 0:
+             fill(255)
+             text("Press B for blue, G for green or Y for yellow", 80, 20)
+         else:
+             fill(100)
+             rect(0, 0, 400, 50)
+             fill(255)
+             text("Press B for blue, G for green or Y for yellow", 80, 20)
+         
+     
+ def draw():
+     '''This function is needed but does nothing'''
+     return
