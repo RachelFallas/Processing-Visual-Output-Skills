@@ -1,13 +1,19 @@
 #Rachel Fallas, Leshae Bell
 #Overview of Processing Visual Output Skills
+#this programe will make a square that will move to were the user clicks on the screen.
+#The user can also change the colour of the square by pressing cretain keys.
  
 def setup():
     '''Will make the initial square, background and beginning instructions'''
+    #the size of the screen
     size(400, 400)
+    #The colour of the background
     background(100)
+    #draws a white square with no stroke
     noStroke()
     fill(255)
     rect(180, 180, 40, 40)
+    #text to tell the user what this programe can do
     text("The square will appear where the mouse is clicked; To change the colour", 5, 20)
     text("of the square, press B for blue, G for green or Y for yellow.", 45, 35)
      
@@ -20,17 +26,24 @@ y = 0
 def square(x, y):
     '''Draws the square so that only two arguments are needed, and the arguments
     are the coordinates of the centre of the square'''
+    #is the square that will move to the mouse when the user 
+    #clicks the left mouse button and the square will center it self from the mouse
     rect(x-20, y-20, 40, 40)
      
 def mouseClicked():
     '''If the mouse is clicked then it will reset the background and move the
     square to where the mouse is'''
+    #so that the variables can be called any where in the programe
     global x
     global y
+    #is so that the background will reset when the user clicks
     background(100)
+    #will use the coloue that was user befor to recolour the square
     fill(colour[0], colour[1], colour[2])
+    #changes the variables from befor to the mouse cordinates
     x = mouseX
     y = mouseY
+    #will call the square function to where the mouse is
     square(mouseX, mouseY)
     
     
@@ -38,30 +51,57 @@ def keyPressed():
     '''Will determine what key is pressed and whether it will change the colour of the
     square. If the user does not push the right key then it will display text that 
     tells the user what keys they can press'''
+    #let's the colour function be called everywhere
     global colour
+    # will determen if the key that the user presses will change the colour of the square or not
+    #green colour when the user pushes the g key
     if key == "g":
+        #color of the square
         colour = (100, 255, 175)
+        #resets the background colour so that the old square is no longer on the screen
         background(100)
+        #colours the square green
         fill(colour[0], colour[1], colour[2])
+        #is the square
         square(x, y)
+    #blue colour when the user pushes the b key
     elif key == "b":
+        #is a blue colour
         colour = (100, 187, 255)
+        #resets the background colour so that the old square is no longer on the screen
         background(100)
+        #colours the square blue
         fill(colour[0], colour[1], colour[2])
+        #is the square
         square(x, y)
+    #yellow colour when the user pushes the y key
     elif key == "y":
+        #is a yellow colour
         colour = (255, 247, 100)
+        #resets the background colour so that the old square is no longer on the screen
         background(100)
+        #colours the square yellow
         fill(colour[0], colour[1], colour[2])
         square(x, y)
+    #if the user pushes any other key it will send a message to them of what key they can push
     else:
         if x != 0 and y != 0:
+            #so that the text is white
             fill(255)
+            #tells tehuser what the y can do
             text("Press B for blue, G for green or Y for yellow", 80, 20)
+            
+        #if the user pushes a wrong key at the start then the program
+        #will draw a rectangle that is teh colour of the background
+        #and it will cover the old text and new text will show
         else:
+            #colours the rectangle grey
             fill(100)
+            #is the rectangle
             rect(0, 0, 400, 50)
+            #colours the text white
             fill(255)
+            #is the text
             text("Press B for blue, G for green or Y for yellow", 80, 20)
         
     
