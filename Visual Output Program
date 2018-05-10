@@ -2,58 +2,47 @@
 #Overview of Processing Visual Output Skills
 
 def setup():
+    '''will make the square and teh background'''
     size(400, 400)
-    background(100)
+    background(200)
     noStroke()
     fill(255)
     rect(180, 180, 40, 40)
-    text("The square will appear where the mouse is clicked; To change the colour", 5, 20)
-    text("of the square, press B for blue, G for green or Y for yellow.", 45, 35)
-    
+
+#the colour for the square when the code first starts up
 colour = (255, 255, 255)
-x = 0
-y = 0
 
 def square(x, y):
+    '''is the square'''
+    #is the square whereb
     rect(x-20, y-20, 40, 40)
     
 def mouseClicked():
-    global x
-    global y
-    background(100)
+    '''if the mouse is clicked then it will rest the background and move the
+    square to where the mouse is'''
+    background(200)
     fill(colour[0], colour[1], colour[2])
-    x = mouseX
-    y = mouseY
     square(mouseX, mouseY)
     
-    
 def keyPressed():
+    '''will determen what key is pressed and whether it will change the colour of the
+    square. If the usre does not push the right key then it will display a text that 
+    tells the user what key they can press'''
     global colour
     if key == "g":
         colour = (100, 255, 175)
-        background(100)
         fill(colour[0], colour[1], colour[2])
-        square(x, y)
+        square(mouseX, mouseY)
     elif key == "b":
         colour = (100, 187, 255)
-        background(100)
         fill(colour[0], colour[1], colour[2])
-        square(x, y)
+        square(mouseX, mouseY)
     elif key == "y":
         colour = (255, 247, 100)
-        background(100)
         fill(colour[0], colour[1], colour[2])
-        square(x, y)
-    else:
-        if x != 0 and y != 0:
-            fill(255)
-            text("Press B for blue, G for green or Y for yellow", 80, 20)
-        else:
-            fill(100)
-            rect(0, 0, 400, 50)
-            fill(255)
-            text("Press B for blue, G for green or Y for yellow", 80, 20)
+        square(mouseX, mouseY)
         
     
 def draw():
+    '''This function is needed but does nothing'''
     return
